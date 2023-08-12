@@ -1,5 +1,11 @@
-# c
-Stuff on C
+# Stuff on C
+
+Used `docker pull gcc` to work through all the sample code on a Windows machine.
+
+```
+gcc -o main *.c
+```
+
 
 https://github.com/TheAlgorithms/C
 
