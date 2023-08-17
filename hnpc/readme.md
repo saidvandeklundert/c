@@ -17,7 +17,7 @@ There are some common socket operations:
 `socket()`: creates and initializes a new socket.
 `bind()`: associates a socket with a particular local IP address and port number.
 `listen()`: is used on the server to cause a TCP socket to listen for new connections.
-`connect()`: is used on the client to set the remote address and port. In the case of TCP, italso establishes a connection.
+`connect()`: is used on the client to set the remote address and port. In the case of TCP, it also establishes a connection doing the handshake etc.
 `accept()`: is used on the server to create a new socket for an incoming TCP connection.
 `send()`: and recv() are used to send and receive data with a socket.
 `sendto()`: and recvfrom() are used to send and receive data from sockets without a bound remoteaddress.
@@ -30,6 +30,9 @@ There are some common socket operations:
 `poll()`: (Berkely)
 `dup()`: (Berkely)
 
+Worth noting is that on Linux, it is also possible to use `inetd` to quickly turn something into a networked application. You can run `inetd` and point it to a script. Then, Linux will send the socket input/output through stdin and stdout.
+
+The `accept()` and `recv()` calls are blocking calls.
 
 ### Example TCP program flow
 
@@ -43,3 +46,9 @@ The server program then calls `listen()`, which puts the socket in a state where
 Note:
 
 windwos linkins: -lws2_32 option to gcc
+
+
+
+
+Friendly Python article about sockets:
+https://realpython.com/python-sockets/
